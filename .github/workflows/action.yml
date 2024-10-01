@@ -74,3 +74,4 @@ jobs:
 
       - name: Sign and publish Docker image
         run: echo "Docker image for ${{ github.ref == 'refs/heads/main' && 'Production' || 'Development' }} environment successfully built and pushed"
+
