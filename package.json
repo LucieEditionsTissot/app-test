@@ -15,6 +15,9 @@
     "lint": "eslint app e2e_tests",
     "prettier": "prettier --write app/*.js app/__{tests,mocks}__/*.js e2e_tests/*.js"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "dependencies": {
     "ejs": "^3.1.8",
     "express": "~4.16.2",
