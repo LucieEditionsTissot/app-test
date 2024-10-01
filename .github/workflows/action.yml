@@ -57,6 +57,9 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Print repository and branch info
+        run: echo "Building Docker image for repository ${{ github.repository }} on branch ${{ github.ref }}"
+
       - name: Extract Docker metadata
         id: meta
         uses: docker/metadata-action@v5
@@ -74,4 +77,3 @@ jobs:
 
       - name: Sign and publish Docker image
         run: echo "Docker image for ${{ github.ref == 'refs/heads/main' && 'Production' || 'Development' }} environment successfully built and pushed"
-
