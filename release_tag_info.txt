@@ -1,0 +1,13 @@
+tag 1.0.0
+Tagger: LucieEditionsTissot <llesnier@editions-tissot.fr>
+Date:   Tue Oct 1 11:13:51 2024 +0200
+
+First stable release with final features
+
+commit c5c844f3e342aa63fb1ebe8f8bd21291d1ff5f08
+Merge: 698ccc5 3d7111c
+Author: LucieEditionsTissot <llesnier@editions-tissot.fr>
+Date:   Tue Oct 1 11:09:07 2024 +0200
+
+    abort
+
