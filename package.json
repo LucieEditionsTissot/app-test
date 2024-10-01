@@ -19,6 +19,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
+    "docker": "^1.0.0",
     "ejs": "^3.1.8",
     "express": "~4.16.2",
     "got": "^8.0.1",
