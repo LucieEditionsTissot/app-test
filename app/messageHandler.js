@@ -15,6 +15,10 @@ const storage = new Storage();
 
 let jobsStatus = {};
 
+function cleanFirebasePath(path) {
+  return path.replace(/[.#$[\]]/g, '_');
+}
+
 async function messageHandler() {
   const subscription = pubsub.subscription(subscriptionName);
   console.log(`Listening for messages on subscription: ${subscriptionName}`);
@@ -49,7 +53,6 @@ async function messageHandler() {
     console.error(`Error receiving message: ${error.message}`);
   });
 }
-
 async function processTagsAndZipPhotos(tags, tagmode) {
   try {
     const photos = await getFlickrPhotos(tags, tagmode);
@@ -65,7 +68,6 @@ async function processTagsAndZipPhotos(tags, tagmode) {
     throw error;
   }
 }
-
 async function createZipStream(photos) {
   const zipFilePath = path.join(__dirname, 'zips', `photos_${Date.now()}.zip`);
   const output = fs.createWriteStream(zipFilePath);
@@ -97,7 +99,6 @@ async function createZipStream(photos) {
     }
   }
 
-
   archive.finalize();
 
   return new Promise((resolve, reject) => {
@@ -113,6 +114,7 @@ async function createZipStream(photos) {
   });
 }
 
+const db = require('./firebaseAdmin');
 async function uploadZipToGCS(zipFilePath, fileName) {
   const bucket = storage.bucket(bucketName);
   const [file] = await bucket.upload(zipFilePath, {
@@ -120,6 +122,21 @@ async function uploadZipToGCS(zipFilePath, fileName) {
     resumable: false,
     metadata: { contentType: 'application/zip' },
   });
+
+  const zipPathInStorage = file.name;
+  const downloadUrl = await generateSignedUrl(zipPathInStorage);
+
+  const now = new Date();
+  const timestamp = cleanFirebasePath(now.toISOString());
+  const zipData = {
+    path: zipPathInStorage,
+    downloadUrl: downloadUrl,
+    createdAt: timestamp,
+  };
+
+  const ref = db.ref(`lucie/${timestamp}/`);
+  await ref.set(zipData);
+
   return file;
 }
 

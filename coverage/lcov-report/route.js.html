@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">23.52% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>17/17</span>
+                <span class='fraction'>4/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>10/10</span>
+                <span class='fraction'>0/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>1/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">23.52% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/17</span>
+                <span class='fraction'>4/17</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -110,38 +110,38 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -151,11 +151,11 @@
 const photoModel = require('./photo_model');
 &nbsp;
 function route(app) {
-  app.get('/', (req, res) =&gt; {
-    const tags = req.query.tags;
-    const tagmode = req.query.tagmode;
+  app.get('/', <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
+    const tags = <span class="cstat-no" title="statement not covered" >req.query.tags;</span>
+    const tagmode = <span class="cstat-no" title="statement not covered" >req.query.tagmode;</span>
 &nbsp;
-    const ejsLocalVariables = {
+    const ejsLocalVariables = <span class="cstat-no" title="statement not covered" >{</span>
       tagsParameter: tags || '',
       tagmodeParameter: tagmode || '',
       photos: [],
@@ -164,26 +164,26 @@ function route(app) {
     };
 &nbsp;
     // if no input params are passed in then render the view with out querying the api
-    if (!tags &amp;&amp; !tagmode) {
-      return res.render('index', ejsLocalVariables);
+<span class="cstat-no" title="statement not covered" >    if (!tags &amp;&amp; !tagmode) {</span>
+<span class="cstat-no" title="statement not covered" >      return res.render('index', ejsLocalVariables);</span>
     }
 &nbsp;
     // validate query parameters
-    if (!formValidator.hasValidFlickrAPIParams(tags, tagmode)) {
-      ejsLocalVariables.invalidParameters = true;
-      return res.render('index', ejsLocalVariables);
+<span class="cstat-no" title="statement not covered" >    if (!formValidator.hasValidFlickrAPIParams(tags, tagmode)) {</span>
+<span class="cstat-no" title="statement not covered" >      ejsLocalVariables.invalidParameters = true;</span>
+<span class="cstat-no" title="statement not covered" >      return res.render('index', ejsLocalVariables);</span>
     }
 &nbsp;
     // get photos from flickr public feed api
-    return photoModel
+<span class="cstat-no" title="statement not covered" >    return photoModel</span>
       .getFlickrPhotos(tags, tagmode)
-      .then(photos =&gt; {
-        ejsLocalVariables.photos = photos;
-        ejsLocalVariables.searchResults = true;
-        return res.render('index', ejsLocalVariables);
+      .then(<span class="fstat-no" title="function not covered" >ph</span>otos =&gt; {
+<span class="cstat-no" title="statement not covered" >        ejsLocalVariables.photos = photos;</span>
+<span class="cstat-no" title="statement not covered" >        ejsLocalVariables.searchResults = true;</span>
+<span class="cstat-no" title="statement not covered" >        return res.render('index', ejsLocalVariables);</span>
       })
-      .catch(error =&gt; {
-        return res.status(500).send({ error });
+      .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
+<span class="cstat-no" title="statement not covered" >        return res.status(500).send({ error });</span>
       });
   });
 }
@@ -196,7 +196,7 @@ module.exports = route;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-10-01T12:53:18.915Z
+                at 2024-10-02T09:34:45.459Z
             </div>
         <script src="prettify.js"></script>
         <script>

@@ -3,4 +3,5 @@ npm-debug.log*
 .DS_Store
 .idea
 dmii-2024-88b33c30d16d.json
+.env
 
