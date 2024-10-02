@@ -9,6 +9,8 @@ function isValidTagmode(value) {
 }
 
 function hasValidFlickrAPIParams(tags, tagmode) {
+  console.log('Tags:', tags);
+  console.log('Tagmode:', tagmode);
   return isValidCommaDelimitedList(tags) && isValidTagmode(tagmode);
 }
 

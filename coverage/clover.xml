@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1727705513459" clover="3.2.0">
-  <project timestamp="1727705513459" name="All files">
-    <metrics statements="58" coveredstatements="58" conditionals="16" coveredconditionals="16" methods="11" coveredmethods="11" elements="85" coveredelements="85" complexity="0" loc="58" ncloc="58" packages="1" files="5" classes="5"/>
+<coverage generated="1727787198932" clover="3.2.0">
+  <project timestamp="1727787198932" name="All files">
+    <metrics statements="74" coveredstatements="69" conditionals="20" coveredconditionals="16" methods="12" coveredmethods="11" elements="106" coveredelements="96" complexity="0" loc="74" ncloc="74" packages="1" files="6" classes="6"/>
     <file name="form_validator.js" path="/Users/digital/Downloads/app-test/app/form_validator.js">
-      <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
       <line num="3" count="10" type="stmt"/>
       <line num="4" count="10" type="stmt"/>
       <line num="8" count="7" type="cond" truecount="2" falsecount="0"/>
-      <line num="12" count="6" type="cond" truecount="2" falsecount="0"/>
-      <line num="15" count="2" type="stmt"/>
+      <line num="12" count="6" type="stmt"/>
+      <line num="13" count="6" type="stmt"/>
+      <line num="14" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="17" count="2" type="stmt"/>
     </file>
     <file name="jsonp_helper.js" path="/Users/digital/Downloads/app-test/app/jsonp_helper.js">
       <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -58,7 +60,7 @@
       <line num="42" count="1" type="stmt"/>
     </file>
     <file name="server.js" path="/Users/digital/Downloads/app-test/app/server.js">
-      <metrics statements="15" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
+      <metrics statements="19" coveredstatements="19" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
@@ -69,11 +71,28 @@
       <line num="13" count="1" type="stmt"/>
       <line num="14" count="1" type="stmt"/>
       <line num="15" count="1" type="stmt"/>
-      <line num="18" count="1" type="stmt"/>
-      <line num="21" count="1" type="cond" truecount="2" falsecount="0"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="21" count="1" type="stmt"/>
       <line num="22" count="1" type="stmt"/>
-      <line num="23" count="1" type="stmt"/>
-      <line num="25" count="1" type="stmt"/>
+      <line num="26" count="1" type="stmt"/>
+      <line num="29" count="1" type="cond" truecount="2" falsecount="0"/>
+      <line num="30" count="1" type="stmt"/>
+      <line num="31" count="1" type="stmt"/>
+      <line num="33" count="1" type="stmt"/>
+    </file>
+    <file name="zipRoute.js" path="/Users/digital/Downloads/app-test/app/zipRoute.js">
+      <metrics statements="10" coveredstatements="5" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="12" count="0" type="stmt"/>
+      <line num="16" count="0" type="stmt"/>
+      <line num="17" count="0" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

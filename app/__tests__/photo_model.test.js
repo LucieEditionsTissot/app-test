@@ -6,7 +6,6 @@ describe('getFlickrPhotos(tags, tagmode, callback)', () => {
   });
 
   test('should return photos', () => {
-    // mock the flickr public feed api endpoint
     jest.doMock('got', () => {
       return jest.fn(() => {
         const jsonpData = `jsonFlickrFeed({

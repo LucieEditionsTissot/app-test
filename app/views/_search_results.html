@@ -1,28 +1,38 @@
-<hr>
-
 <div class="panel panel-default search-results">
   <div class="panel-heading">
     <h3 class="panel-title">Search Results</h3>
   </div>
   <div class="panel-body">
-
     <% if (photos.length) { %>
+    <ul>
+      <% photos.forEach(function (photo) { %>
+      <li class="list-unstyled">
+        <a href="<%= photo.media.b %>" class="thumbnail">
+          <img src="<%= photo.media.t %>" alt="Photo - <%= photo.title %>"
+               title="<%= photo.title %>">
+        </a>
+      </li>
+      <% }) %>
+    </ul>
 
-      <ul>
-        <% photos.forEach(function (photo) { %>
-          <li class="list-unstyled">
-            <a href="<%= photo.media.b %>" class="thumbnail">
-              <img src="<%= photo.media.t %>" alt="Photo - <%= photo.title %>"
-                title="<%= photo.title %>">
-            </a>
-          </li>
-        <% }) %>
-      </ul>
+    <form id="zip-form" action="/zip" method="post">
+      <input type="hidden" name="tags" value="<%= tagsParameter %>">
+      <input type="hidden" name="tagmode" value="<%= tagmodeParameter %>">
+      <button type="submit" class="btn btn-primary">Zip the Photos</button>
+    </form>
 
-    <% } else { %>
-      <div class="alert alert-info"><strong>No results</strong></div>
+    <% if (status === 'success' && downloadLink) { %>
+    <div class="alert alert-success" role="alert">
+      Le fichier ZIP a été généré. <br>
+      <strong><a href="<%= downloadLink %>" target="_blank" style="text-decoration: underline;">Lien de téléchargement</a></strong>
+    </div>
+    <% } else if (status === 'in-progress') { %>
+    <div class="alert alert-info" role="alert">
+      Le processus de zippage a démarré. Le fichier sera disponible sous peu.
+    </div>
     <% } %>
-
+    <% } else { %>
+    <div class="alert alert-info"><strong>No results</strong></div>
+    <% } %>
   </div>
-
 </div>

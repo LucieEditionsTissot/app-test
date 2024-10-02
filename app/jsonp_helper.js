@@ -4,7 +4,6 @@ function parseJSONP(jsonpData) {
     const endPos = jsonpData.lastIndexOf('})');
     let jsonString = jsonpData.substring(startPos + 1, endPos + 1);
 
-    // remove escaped single quotes since they are not valid json
     jsonString = jsonString.replace(/\\'/g, "'");
 
     return JSON.parse(jsonString);
